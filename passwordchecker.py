@@ -20,8 +20,8 @@ def pwned_api_check(password):
     sha1password = hashlib.sha1(password.encode('utf-8')).hexdigest().upper()
     first5_char, tail = sha1password[:5], sha1password[5:]
     response = request_api_data(first5_char)
-    print(first5_char, tail)
-    print(response)
+    # print(first5_char, tail)
+    # print(response)
     return get_password_leaks_count(response, tail)
 
 def read_response(response):
